@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>RabbitQuiz</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="titleA">
+            <img src="title.png" alt="title" title="title">
+            <h3>うさぎについてのクイズです(全3問)</h3>
+        </div>
+        
+        <section class="container">
+            <p id="question"></p>
+            <p id="commentary"></p>
+            <ul id="answerDisplay"></ul>
+            <div class="buttonAll">
+                <button type="button" id="button0" class="btn"></button><br>
+                <button type="button" id="button1" class="btn"></button><br>
+                <button type="button" id="button2" class="btn"></button><br>
+                <button type="button" id="button3" class="btn"></button>
+            </div>
+            <div class="operationBtn">
+                <button type="button" id="answer" class="noClick">解答</button>
+                <button type="button" id="next" class="disabled">次へ</button>
+            </div>
+            <section id="result" class="hidden">
+                <p></p>
+                <a href="">もう1回？</a>
+            </section>
+        </section>
+        <script src="main.js"></script>
+    </body>
+</html>

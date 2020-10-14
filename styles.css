@@ -1,0 +1,124 @@
+body {
+    background: #ff9966;
+    font-size: 25px;
+    font-family: Verdana, sans-serif;
+}
+
+.titleA{
+    text-align: center;
+    color:#ffffff;
+    font-size: 20px;
+}
+
+.container {
+    width: 500px;
+    margin: 8px auto;
+    background: #fff;
+    border-radius: 4px;
+    padding: 16px;
+    position: relative;
+}
+
+#question {
+    margin-bottom: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.red {
+    color: #ff0000;
+}
+
+#commentary{
+    text-align: center;
+    color: #000080;
+}
+
+#answerDisplay{
+    margin-right: 37px;
+    text-align: center;
+    color: #008080;
+}
+
+.buttonAll{
+    text-align: center;
+}
+
+.btn{
+    width: 300px;
+    height: 40px;
+    margin-top:5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:focus{
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.operationBtn{
+    text-align: center;
+}
+
+#answer{
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    background-color: #ff6600;
+    color: #ffffff;
+    cursor: pointer;
+}
+#answer.noClick {
+    background: #ccc;
+}
+
+#next{
+    width: 150px;
+    height: 35px;
+    margin-top: 10px;
+    font-size: 20px;
+    background-color: #0000ff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#next.disabled {
+    background: #ccc;
+}
+
+#result > a {
+    background: #3498db;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+}
+
+#result {
+    position: absolute;
+    width: 300px;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 4px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+#result.hidden {
+    transform: translateY(-500px);
+}
+
+#result > p {
+    font-size: 24px;
+}
+
+#result > a {
+    display: block;
+    text-decoration: none;
+}
