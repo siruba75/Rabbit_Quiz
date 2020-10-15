@@ -45,6 +45,8 @@ body {
 }
 
 .btn{
+    background-color: #00ccff;
+    color: #ffffff;
     width: 300px;
     height: 40px;
     margin-top:5px;
