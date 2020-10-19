@@ -3,7 +3,11 @@
     const $question = document.getElementById("question");
     const $commentary = document.getElementById("commentary");
     const $answerDisplay = document.getElementById("answerDisplay");
-    const $buttons = document.querySelectorAll('.btn');
+    const $buttons = document.querySelectorAll(".btn");
+    const $button0 = document.getElementById("button0");
+    const $button1 = document.getElementById("button1");
+    const $button2 = document.getElementById("button2");
+    const $button3 = document.getElementById("button3");
     const $answer = document.getElementById("answer");
     const $next = document.getElementById("next");
     const $result = document.getElementById("result");
@@ -73,6 +77,10 @@
         } else {
             $answerDisplay.textContent = "結果：不正解";
         }
+        $button0.classList.add("hide");
+        $button1.classList.add("hide");
+        $button2.classList.add("hide");
+        $button3.classList.add("hide");
         $answer.classList.add("noClick");
         $next.classList.remove("disabled");
         if(quizNumber === 2){
@@ -87,10 +95,18 @@
         if ($next.classList.contains("disabled")){
             return;
         }
+        $button0.classList.remove("hide");
+        $button1.classList.remove("hide");
+        $button2.classList.remove("hide");
+        $button3.classList.remove("hide");
         $next.classList.add("disabled");
         if (quizNumber === 2){
             $result.classList.remove("hidden");
             $scoreLabel.textContent = `正解数:${score} / 3`;
+            $button0.classList.add("hide");
+            $button1.classList.add("hide");
+            $button2.classList.add("hide");
+            $button3.classList.add("hide");
         } else {
             quizNumber++;
             quizDislay();

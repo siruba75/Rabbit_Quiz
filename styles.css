@@ -59,6 +59,10 @@ body {
     color: #ffffff;
 }
 
+.hide{
+    display: none;
+}
+
 .operationBtn{
     text-align: center;
 }
