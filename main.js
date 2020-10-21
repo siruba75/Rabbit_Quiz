@@ -3,11 +3,7 @@
     const $question = document.getElementById("question");
     const $commentary = document.getElementById("commentary");
     const $answerDisplay = document.getElementById("answerDisplay");
-    const $buttons = document.querySelectorAll(".btn");
-    const $button0 = document.getElementById("button0");
-    const $button1 = document.getElementById("button1");
-    const $button2 = document.getElementById("button2");
-    const $button3 = document.getElementById("button3");
+    const $buttonAll = document.getElementById("buttonAll");
     const $answer = document.getElementById("answer");
     const $next = document.getElementById("next");
     const $result = document.getElementById("result");
@@ -21,8 +17,6 @@
         {q: "ピーターラビットのモデルになったうさぎの種類は？", c: ["ネザーランドドワーフ", "レッキス", "ホーランドロップイヤー", "ミニウサギ"], a: "ネザーランドドワーフ", k: "耳が短く体が丸っこいのが特徴でピーターラビットのモデルにもなりました"}
     ]);
 
-    const btnlength = $buttons.length;
-    let clickbtn = 0;
     let quizNumber = 0;
     let correct = 0;
     let score = 0;
@@ -35,30 +29,27 @@
         return arr;
     }
 
-    function checkAnswer(e){
-        if(quiz[quizNumber].a === e.target.textContent){
+    function checkAnswer(Cbutton){
+        if(quiz[quizNumber].a === Cbutton.textContent){
             correct = 1;
         } else {
             correct = 0;
         }
     }
-    
-    while (clickbtn < btnlength){
-        $buttons[clickbtn].addEventListener( "click", (e) => {
-            checkAnswer(e);
-            $answer.classList.remove('noClick');
-        });
-        clickbtn++;
-    }
-    
+
     function quizDislay(){
         $answerDisplay.textContent = "";
         $commentary.textContent = "";
         $question.textContent = quiz[quizNumber].q;
-        let btnindex = 0;
-        while(btnindex < btnlength){
-            $buttons[btnindex].textContent = quiz[quizNumber].c[btnindex];
-            btnindex++;
+        for(let i = 0; i < quiz[quizNumber].c.length; i++){
+            const Cbutton = document.createElement("button");
+            Cbutton.classList.add("btn");
+            document.getElementById("buttonAll").appendChild(Cbutton);
+            Cbutton.textContent = quiz[quizNumber].c[i];
+            Cbutton.addEventListener("click", () => {
+                checkAnswer(Cbutton);
+                $answer.classList.remove("noClick");
+            });
         }
     }
     quizDislay();
@@ -68,6 +59,7 @@
             return;
         }
         $question.classList.add("red");
+        $buttonAll.textContent = "";
         $question.textContent = "正解は：" + quiz[quizNumber].a;
         $commentary.textContent = quiz[quizNumber].k;
         if (correct === 1){
@@ -77,10 +69,6 @@
         } else {
             $answerDisplay.textContent = "結果：不正解";
         }
-        $button0.classList.add("hide");
-        $button1.classList.add("hide");
-        $button2.classList.add("hide");
-        $button3.classList.add("hide");
         $answer.classList.add("noClick");
         $next.classList.remove("disabled");
         if(quizNumber === 2){
@@ -91,22 +79,14 @@
     });
 
     $next.addEventListener("click", () => {
-        $question.classList.remove("red");
         if ($next.classList.contains("disabled")){
             return;
         }
-        $button0.classList.remove("hide");
-        $button1.classList.remove("hide");
-        $button2.classList.remove("hide");
-        $button3.classList.remove("hide");
+        $question.classList.remove("red");
         $next.classList.add("disabled");
         if (quizNumber === 2){
             $result.classList.remove("hidden");
             $scoreLabel.textContent = `正解数:${score} / 3`;
-            $button0.classList.add("hide");
-            $button1.classList.add("hide");
-            $button2.classList.add("hide");
-            $button3.classList.add("hide");
         } else {
             quizNumber++;
             quizDislay();

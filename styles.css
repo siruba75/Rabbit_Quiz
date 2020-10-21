@@ -1,7 +1,14 @@
 body {
+    width: 100%;
     background: #ff9966;
     font-size: 25px;
     font-family: Verdana, sans-serif;
+}
+
+@media screen and (max-width:700px){
+    body{
+        width: 600px;
+    }
 }
 
 .titleA{
@@ -40,7 +47,7 @@ body {
     color: #008080;
 }
 
-.buttonAll{
+#buttonAll{
     text-align: center;
 }
 
@@ -57,10 +64,6 @@ body {
 .btn:focus{
     background-color: #ff0000;
     color: #ffffff;
-}
-
-.hide{
-    display: none;
 }
 
 .operationBtn{
