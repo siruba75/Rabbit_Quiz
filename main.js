@@ -46,6 +46,7 @@
             Cbutton.classList.add("btn");
             document.getElementById("buttonAll").appendChild(Cbutton);
             Cbutton.textContent = quiz[quizNumber].c[i];
+            Cbutton.getAttribute("ontouchend");
             Cbutton.addEventListener("click", () => {
                 checkAnswer(Cbutton);
                 $answer.classList.remove("noClick");
