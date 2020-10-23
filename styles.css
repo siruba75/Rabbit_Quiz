@@ -5,6 +5,12 @@ body {
     font-family: Verdana, sans-serif;
 }
 
+@media (max-width: 700px){
+    body{
+        width: 100%;
+    }
+}
+
 .titleA{
     text-align: center;
     color:#ffffff;
