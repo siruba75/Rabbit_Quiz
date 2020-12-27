@@ -1,18 +1,26 @@
-body {
+* {
+    float: none;
+    position: static;
+}
+
+body{
     width: 100%;
     background: #ff9966;
-    font-size: 25px;
-    font-family: Verdana, sans-serif;
+    background: #ff9966;
 }
 
 .titleA{
     text-align: center;
-    color:#ffffff;
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 40px;
 }
 
-.container {
-    width: 500px;
+.img{
+    width: 80%;
+}
+
+.container{
+    width: 80%;
     margin: 8px auto;
     background: #fff;
     border-radius: 4px;
@@ -24,6 +32,7 @@ body {
     margin-bottom: 16px;
     font-weight: bold;
     text-align: center;
+    font-size: 30px;
 }
 
 .red {
@@ -33,12 +42,14 @@ body {
 #commentary{
     text-align: center;
     color: #000080;
+    font-size: 30px;
 }
 
 #answerDisplay{
     margin-right: 37px;
     text-align: center;
     color: #008080;
+    font-size: 30px;
 }
 
 #buttonAll{
@@ -48,10 +59,10 @@ body {
 .btn{
     background-color: #00ccff;
     color: #ffffff;
-    width: 300px;
-    height: 40px;
+    width: 500px;
+    height: 50px;
     margin-top:5px;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -65,9 +76,9 @@ body {
 }
 
 #answer{
-    width: 150px;
-    height: 35px;
-    font-size: 20px;
+    width: 250px;
+    height: 50px;
+    font-size: 30px;
     background-color: #ff6600;
     color: #ffffff;
     cursor: pointer;
@@ -77,10 +88,10 @@ body {
 }
 
 #next{
-    width: 150px;
-    height: 35px;
+    width: 250px;
+    height: 50px;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 30px;
     background-color: #0000ff;
     color: #ffffff;
     cursor: pointer;
@@ -100,7 +111,7 @@ body {
 
 #result {
     position: absolute;
-    width: 300px;
+    width: 500px;
     background: #fff;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -111,17 +122,72 @@ body {
     border-radius: 4px;
     text-align: center;
     transition: 0.4s;
+    font-size: 40px;
 }
 
 #result.hidden {
-    transform: translateY(-500px);
+    transform: translateY(-700px);
 }
 
 #result > p {
-    font-size: 24px;
+    font-size: 40px;
 }
 
 #result > a {
     display: block;
     text-decoration: none;
+}
+
+@media screen and (min-width:480px){
+    .titleA{
+        font-size: 20px;
+    }
+
+    .img{
+        width: 400px;
+    }
+
+    .container{
+        width: 600px;
+    }
+
+    #question {
+        font-size: 20px;
+    }
+
+    #commentary{
+        font-size: 20px;
+    }
+
+    #answerDisplay{
+        font-size: 20px;
+    }
+
+    .btn{
+        width: 400px;
+        height: 40px;
+        margin-top:5px;
+        font-size: 20px;
+    }
+
+    #answer{
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #next{
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #result {
+        width: 300px;
+        font-size: 20px;
+    }
+
+    #result > p {
+        font-size: 20px;
+    }
 }
